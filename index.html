@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculate Nubmer of Days Between Two Dates</title>
+    <link rel="stylesheet" href="jqueryui/jquery-ui.structure.min.css"/>
+    <link rel="stylesheet" href="jqueryui/jquery-ui.theme.min.css"/>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css"/>
+
+</head>
+<body>
+
+<p>Date 1: <input type="text" id="datepicker1"> <span class="btn btn-primary" id="btnSetToday1">Today</span></p>
+<p>Date 2: <input type="text" id="datepicker2"> <span class="btn btn-primary" id="btnSetToday2">Today</span></p>
+<p>Days between Date 1 and Date 2: <span id="days"></span></p>
+<script src="jquery.js"></script>
+<script src="jqueryui/jquery-ui.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script>
+    var date1;
+    var date2;
+
+    var days = $("#days");
+    var LOG = function(str) {
+        console.log(str);
+    }
+    var getDiff = function(str1, str2) {
+        return Math.floor((Date.parse(str2)- Date.parse(str1)) / 86400000);
+    };
+    var updateDays = function() {
+        days.text(getDiff($("#datepicker1").val(), $("#datepicker2").val()));
+    };
+    $("#btnSetToday1").click(function() {
+        $("#datepicker1").datepicker("setDate", new Date());
+        updateDays();
+    });
+    $("#btnSetToday2").click(function() {
+        $("#datepicker2").datepicker("setDate", new Date());
+        updateDays();
+    });
+    $("#datepicker1").datepicker({"onClose":function(dateText){
+        updateDays();
+    }});
+    $("#datepicker2").datepicker({"onClose":function(dateText){
+        updateDays();
+    }});
+
+</script>
+</body>
+</html>
