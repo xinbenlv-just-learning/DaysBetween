@@ -7,13 +7,53 @@
     <link rel="stylesheet" href="jqueryui/jquery-ui.theme.min.css"/>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css"/>
-
+    <style>
+        .date {
+            margin-top:15px;
+            margin-bottom: 15px;
+        }
+        #days-panel,#store-panel {
+            text-align: center;
+        }
+        #store-panel {
+            margin-bottom: 15px;
+        }
+    </style>
 </head>
 <body>
+<div class="container">
+    <div class="row">
+        <div class="date input-group col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-12">
+            <span class="input-group-addon">Date 1</span>
+            <input type="text" class="form-control" placeholder="Date 1" id="datepicker1">
+        </div>
 
-<p>Date 1: <input type="text" id="datepicker1"> <span class="btn btn-primary" id="btnSetToday1">Today</span></p>
-<p>Date 2: <input type="text" id="datepicker2"> <span class="btn btn-primary" id="btnSetToday2">Today</span></p>
-<p>Days between Date 1 and Date 2: <span id="days"></span></p>
+
+    </div>
+    <div class="row">
+        <div class="date input-group col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-12">
+            <span class="input-group-addon">Date 2</span>
+            <input type="text" class="form-control" placeholder="Date 2" id="datepicker2">
+        </div>
+
+    </div>
+    <div class="row">
+        <div id="days-panel" class="col-lg-4 col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-12">
+        <h3>Number of Days: </h3>
+        <h2><span id="days" class="alert-link">0</span></h2>
+        </div>
+    </div>
+    <div class="navbar-fixed-bottom">
+        <div class="container">
+            <div id="store-panel" class=" col-lg-4 col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-12">
+                <a href="https://play.google.com/store/apps/details?id=days.git.zzn.im">
+                    <img alt="Get it on Google Play"
+                         src="google_play.png" />
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
 <script src="jquery.js"></script>
 <script src="jqueryui/jquery-ui.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
